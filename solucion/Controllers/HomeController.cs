@@ -1,35 +1,65 @@
+using System.ComponentModel.DataAnnotations;
 using System.Diagnostics;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.EntityFrameworkCore.Storage;
 using solucion.Data;
 using solucion.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace solucion.Controllers;
 
 public class HomeController : Controller
 {
-    private readonly ILogger<HomeController> _logger;
     private readonly RegistroContext _context;
 
-    public HomeController(RegistroContext context,ILogger<HomeController> logger)
+    public HomeController(RegistroContext context)
     {
-        _logger = logger;
         _context = context;
     }
 
     public IActionResult Index()
     {
-        
+        ViewBag.Nombre = HttpContext.Session.GetString("Email");
+        return View(_context.Employees.ToList());
+    }
+
+    
+    public IActionResult Login(string message = "")
+    {
+        ViewBag.Message = message;
         return View();
     }
 
-    public IActionResult Privacy()
+
+    [HttpPost]
+    public async Task<IActionResult> Login(string email, string password)
     {
-        return View();
+        if(!string.IsNullOrEmpty(email))
+        {
+            //Hacemos uso de la base de datos
+            var user = await _context.Employees.FirstOrDefaultAsync(r => r.Email == email);
+
+            if(user != null && user.Password == password ) //Si el usuario es diferente de null
+            {
+                HttpContext.Session.SetString("Email", user.Email);
+                //Encontramos un usuario con los datos
+                return RedirectToAction("Index", "Employees");
+            }
+            else
+            {
+                return Login("User not registered");
+            }
+
+        }
+        else
+        {
+            return Login("Fill in the fields to be able to login");
+        }
     }
 
-    [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-    public IActionResult Error()
-    {
-        return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-    }
+    
+
 }
+
