@@ -19,14 +19,7 @@ public class HomeController : Controller
         _context = context;
     }
 
-    public IActionResult Index()
-    {
-        ViewBag.Nombre = HttpContext.Session.GetString("Email");
-        return View(_context.Employees.ToList());
-    }
-
-    
-    public IActionResult Login(string message = "")
+    public IActionResult Index(string message = "")
     {
         ViewBag.Message = message;
         return View();
@@ -49,13 +42,13 @@ public class HomeController : Controller
             }
             else
             {
-                return Login("User not registered");
+                return Index("User not registered");
             }
 
         }
         else
         {
-            return Login("Fill in the fields to be able to login");
+            return Index("Fill in the fields to be able to login");
         }
     }
 
