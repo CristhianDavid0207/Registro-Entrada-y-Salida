@@ -22,6 +22,7 @@ public class HomeController : Controller
     public IActionResult Index(string message = "")
     {
         ViewBag.Message = message;
+  
         return View();
     }
 
@@ -40,18 +41,21 @@ public class HomeController : Controller
                 //Encontramos un usuario con los datos
                 return RedirectToAction("Index", "Employees");
             }
+            else if(user != null && user.Password != password ) 
+            {
+                return RedirectToAction("Index", new {message = "Incorrect user or password"});  
+            }
             else
             {
-                return Index("User not registered");
+                return RedirectToAction("Index" , new {message = "User not registered"} ) ;                
             }
 
         }
         else
         {
-            return Index("Fill in the fields to be able to login");
+            return RedirectToAction("Index", new {message = "Fill in the fields to be able to login"});
         }
     }
-
     
 
 }
