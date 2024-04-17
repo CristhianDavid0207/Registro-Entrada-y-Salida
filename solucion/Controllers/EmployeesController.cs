@@ -12,5 +12,25 @@ namespace solucion.Controllers
         {
             _context = context;
         }
+
+        public IActionResult Index()
+        {
+
+            ViewBag.Nombre = HttpContext.Session.GetString("Email");
+            if(ViewBag.Nombre != null){
+                return View();
+
+            }else{
+                return RedirectToAction("Index", "Home");
+            }
+        }
+
+        public async Task<IActionResult> Logout()
+        {
+            HttpContext.Session.Remove("Email");
+            return RedirectToAction("Index", "Home");
+        }
+
+
     }
 }

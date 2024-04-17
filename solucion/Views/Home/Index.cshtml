@@ -1,9 +1,28 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿
+@{
+    ViewData["Title"] = "Login";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
 
+<a asp-controller="Home" asp-action="Login" class="btn btn-outline-dark" >Login</a>
+<h2 class="text-center">Employees</h2>
+<a asp-controller="Employees" asp-action="Index" class="btn -btn-outline-dark">Employees</a>
+
+<p>@ViewBag.Nombre</p>
+
+<table class="table">
+    <tr>
+        <th>Id</th>
+        <th>email</th>
+        <th>password</th>
+    </tr>
+    @foreach (var e in Model){
+        <tr>
+            <td>@e.Id</td>
+            <td>@e.Email</td>
+            <td>@e.Password</td>
+        </tr>
+    }
+
+
+</table>
