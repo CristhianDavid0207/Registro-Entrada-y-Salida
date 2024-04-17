@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using solucion.Models;
 using solucion.Data;
+using Microsoft.EntityFrameworkCore.Storage.ValueConversion.Internal;
 
 namespace solucion.Controllers
 {
@@ -30,6 +31,9 @@ namespace solucion.Controllers
             HttpContext.Session.Remove("Email");
             return RedirectToAction("Index", "Home");
         }
+
+
+
 
 
     }
