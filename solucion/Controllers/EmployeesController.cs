@@ -19,11 +19,12 @@ namespace solucion.Controllers
 
             ViewBag.Nombre = HttpContext.Session.GetString("Email");
             if(ViewBag.Nombre != null){
-                return View();
+                return View(_context.Controls.ToList());
 
             }else{
                 return RedirectToAction("Index", "Home");
             }
+            
         }
 
         public async Task<IActionResult> Logout()
