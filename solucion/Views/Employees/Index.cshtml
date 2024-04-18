@@ -1,39 +1,58 @@
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">solucion</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+@{
+    <link rel="stylesheet" href="~/css/employees.css" asp-append-version="true" />
+}
+<header >
+    <nav id="header" class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3 bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand col-6 ms-2" asp-area="" asp-controller="Home" asp-action="Index">
+                <img src="~/img/cyd.png" style="width: 90px; ;">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
                         aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Login">Privacy</a>
-                        </li>
-                    </ul>
-                </div>
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between col-">
+                <ul class="navbar-nav flex-grow-1 dropdown d-flex justify-content-end align-items-center">
+                    <li class="nav-item">
+                        <p style="font-size: 12px;" class="align-items-cente"><b>Welcome @ViewBag.Nombre</b></p>
+                    </li>
+                    <li class="nav-item">
+                        <img src="https://img.freepik.com/vector-premium/perfil-masculino-peinado-barba-bigote-logotipo-barberia-silueta-hombre-vector_849264-549.jpg"  style="width:50px; border-radius:50px " class="ms-2 nav-link">
+                    </li>
+                    <div class="dropdown-menu" id="menu">
+                        <a class="dropdown-item" href="#">Historial</a>
+                        <a class="dropdown-item" asp-controller="Employees" asp-action="Create">Agregar nuevo empleado</a>
+                        <form asp-controller="Employees" asp-action="Logout" method="post">
+                            <button class="dropdown-item" type="submit">Sign Out</button>
+                        </form>
+                    </div>
+                </ul>
             </div>
-        </nav>
-    </header>
+        </div>  
+    </nav>
+</header>
 
 <div class="container">
-    <div class="row">
-        <div class="col">
-            <form asp-controller="Employees" asp-action="Logout" method="post">
-                <button class="btn btn-outline-dark" type="submit">Sign Out</button>
-            </form>
-            <h3>Hola desde index Employees @ViewBag.Nombre</h3>
-        </div>
+    <div class="row d-flex justify-content-center align-items-center">        
+        <img src="https://img.freepik.com/vector-premium/perfil-masculino-peinado-barba-bigote-logotipo-barberia-silueta-hombre-vector_849264-549.jpg"  style="width:130px; border-radius:50px " class="mb-5">
+        <p style="font-size: 20px;" class="text-center mb-5"><b>@ViewBag.Nombre</b></p>         
+        <a class="button1 m-2">Registrar Entrada</a><br>
+        <a class="button2 m-2">Registrar Salida</a>
     </div>
 </div>
 
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2024 - Sistema de Ingresos y Salidas Laborales <a href="https://github.com/CristhianDavid0207/Registro-Entrada-y-Salida">Daniel Toro | Cristhian Bermudez</a>
+<footer class="border-top footer text-muted fixed-bottom" id="footer">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-6 text-start">
+                &copy; 2024 - Sistema de Ingresos y Salidas Laborales <a href="https://github.com/CristhianDavid0207/Registro-Entrada-y-Salida">Daniel Toro | Cristhian Bermudez</a>
+            </div>
+            <div class="col-6 text-end">
+                <marquee><p><b>Bienvenidos a nuestra pagina</b></p></marquee>
+            </div>
         </div>
-    </footer>
+    </div>
+</footer>
+
+        
