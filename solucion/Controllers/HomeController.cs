@@ -37,7 +37,8 @@ public class HomeController : Controller
 
             if(user != null && user.Password == password ) //Si el usuario es diferente de null
             {
-                HttpContext.Session.SetString("Email", user.Email);
+                HttpContext.Session.SetString("Names", user.Names);
+                HttpContext.Session.SetString("LastNames", user.LastNames);
                 //Encontramos un usuario con los datos
                 return RedirectToAction("Index", "Employees");
             }

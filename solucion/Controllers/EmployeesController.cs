@@ -16,8 +16,11 @@ namespace solucion.Controllers
 
         public IActionResult Index()
         {
+            
 
-            ViewBag.Nombre = HttpContext.Session.GetString("Email");
+            ViewBag.Nombre = HttpContext.Session.GetString("Names");
+            ViewBag.LastNames = HttpContext.Session.GetString("LastNames");
+
             if(ViewBag.Nombre != null){
                 return View(_context.Controls.ToList());
 
@@ -27,9 +30,9 @@ namespace solucion.Controllers
             
         }
 
-        public async Task<IActionResult> Logout()
+        public IActionResult Logout()
         {
-            HttpContext.Session.Remove("Email");
+            HttpContext.Session.Clear();
             return RedirectToAction("Index", "Home");
         }
 

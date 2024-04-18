@@ -12,15 +12,15 @@ namespace solucion.Controllers
             _context = context;
         }
 
-        public IActionResult Incom(int id)
+        public IActionResult Index()
         {
-            var user = _context.Controls.FirstOrDefault(r => r.Id == id);
-            return Json(user);
+            return View();
         }
 
-
-
-
-
-    }
+        public IActionResult Incom(int id)
+        {
+            var user = _context.Controls.FirstOrDefault(r => r.EmployeesId == id);
+            return Json(user);
+        }
+        }
 }
