@@ -1,5 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using solucion.Data;
+using solucion.Models;
 
 namespace solucion.Controllers
 {
@@ -17,10 +19,17 @@ namespace solucion.Controllers
             return View();
         }
 
-        public IActionResult Incom(int id)
+        [HttpPost]
+        public async Task<IActionResult> Income()
         {
-            var user = _context.Controls.FirstOrDefault(r => r.EmployeesId == id);
-            return Json(user);
+            var id = HttpContext.Session.GetInt32("Id");
+            var lista = new Control(){
+                Income = DateTime.Now,
+                EmployeesId = id
+            };
+           _context.Controls.Add(lista);
+           await _context.SaveChangesAsync();
+           return RedirectToAction("Index", "Employees");            
         }
-        }
+    }
 }
