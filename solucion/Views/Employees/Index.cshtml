@@ -4,7 +4,7 @@
 <header >
     <nav id="header" class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3 bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand col-6 ms-2" asp-area="" asp-controller="Home" asp-action="Index">
+            <a class="navbar-brand col-6 ms-2" asp-area="" asp-controller="Employees" asp-action="Index">
                 <img src="~/img/cyd.png" style="width: 90px; ;">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
@@ -32,18 +32,16 @@
     </nav>
 </header>
 
-<div class="container " style="height: 80vh; background-color: rgb(190, 190, 190);">
+<div class="container " style="height: 80vh;">
     <div class="row d-flex justify-content-center align-items-center">  
         <div class="card border-0 align-items-center col-6" style="background-color: rgb(190, 190, 190);">
-            <img src="@ViewBag.PhotoProfile" style="width: 100px;" class="m-3 text-center ">
+            <img src="@ViewBag.PhotoProfile" style="width: 100px; border-radius:50px " class="m-3 text-center  ">
             <h2 class="text-center mb-0">@ViewBag.Nombre @ViewBag.LastNames</h2> 
             <p>@ViewBag.Email</p>
-            
             <div class=" d-column justify-content-center text-center">
-                <a class="button1 m-3 text-center">Registrar Entrada</a>
+                <a class="button1 m-3">Registrar Entrada</a>
                 <a class="button2 m-3">Registrar Salida</a>
             </div>
-
         </div>      
     </div>
 </div>
@@ -56,7 +54,7 @@
                 &copy; 2024 - Sistema de Ingresos y Salidas Laborales <a href="https://github.com/CristhianDavid0207/Registro-Entrada-y-Salida">Daniel Toro | Cristhian Bermudez</a>
             </div>
             <div class="col-6 text-end">
-                <marquee><p><b>Bienvenidos a nuestra pagina</b></p></marquee>
+                <marquee><p><b>Bienvenidos a nuestra espectacular pagina</b></p></marquee>
             </div>
         </div>
     </div>
