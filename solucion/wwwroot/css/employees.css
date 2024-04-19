@@ -23,7 +23,7 @@
     height: 70px;
     background-color: rgb(67, 67, 69)!important;
     align-items: center;
-    color: white;
+    color: white!important;
   }
 
   .button1 {
@@ -32,9 +32,9 @@
     align-items: center;
     position: relative;
     padding: 0.1em 1em;
-    border: rgb(73, 244, 119) solid 0.15em;
+    border: rgb(61, 186, 94) solid 0.15em;
     border-radius: 40px;
-    color: rgb(73, 244, 119);
+    color: rgb(61, 186, 94);
     font-size: 1.5em;
     font-weight: 600;
     cursor: pointer;
@@ -56,7 +56,7 @@
     position: absolute;
     width: 9em;
     aspect-ratio: 1;
-    background: rgb(73, 244, 119);
+    background: rgb(61, 186, 94);
     opacity: 50%;
     border-radius: 50%;
     transition: transform 500ms, background 300ms;
@@ -137,4 +137,8 @@
   .card{
     overflow: hidden;
   }
-  
+
+   body {
+    background-color: rgb(190, 190, 190);
+    background-size: 100%;
+  }
