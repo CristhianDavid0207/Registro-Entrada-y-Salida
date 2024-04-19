@@ -15,11 +15,10 @@
     </nav>
 </header>
 <div class="container">
-    <div class="row justify-content-center align-items-center " style="height: 100vh;" >
+    <div class="row justify-content-center align-items-center " style="height: 100vh;">
         <div class="card col-md-5 shadow">
             <div class="text-center">
-                <img src="~/img/cyd.png" style="width: 90px;">
-                <h2 class="m-2"><b>LOGIN</b></h2>
+                <img class="m-3" src="~/img/cyd.png" style="width: 200px;">
             </div>
             @{
                 if(!string.IsNullOrEmpty(ViewBag.Message))
@@ -31,14 +30,14 @@
             <form asp-controller="Home" asp-action="Login" method="post">
                 <div class="form-group m-3">
                     <label asp-for="Email"></label>
-                    <input class="form-control" name="email" asp-for="Email">
+                    <input class="form-control shadow" name="email" asp-for="Email">
                 </div>
                 <div class="form-group m-3">
                     <label asp-for="Password"></label>
-                    <input class="form-control" type="password" name="password" asp-for="Password">
+                    <input class="form-control shadow" type="password" name="password" asp-for="Password">
                 </div>
                 <div class="text-center" >
-                    <button class="btn btn-primary mt-0 m-3 w-50" >Login</button>
+                    <button class="btn btn-outline-dark shadow mt-0 m-3 w-50" >Login</button>
                 </div>
             </form>
         </div>            
