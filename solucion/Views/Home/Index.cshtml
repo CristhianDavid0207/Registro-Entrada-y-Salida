@@ -1,13 +1,26 @@
 ﻿﻿@{
     ViewBag.Title = "Home | LogIn";
+    <link rel="stylesheet" href="~/css/employees.css" asp-append-version="true" />
 }
 
 @model Employee
 
+<header >
+    <nav id="header" class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3 bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand col-6 ms-2">
+                <img src="~/img/cyd.png" style="width: 90px; ;">
+            </a>
+        </div>  
+    </nav>
+</header>
 <div class="container">
     <div class="row justify-content-center align-items-center " style="height: 100vh;" >
         <div class="card col-md-5 shadow">
-            <h2 class="m-2 text-center">LOGIN</h2>
+            <div class="text-center">
+                <img src="~/img/cyd.png" style="width: 90px;">
+                <h2 class="m-2"><b>LOGIN</b></h2>
+            </div>
             @{
                 if(!string.IsNullOrEmpty(ViewBag.Message))
                 {
@@ -31,3 +44,16 @@
         </div>            
     </div>
 </div>
+
+<footer class="border-top footer text-muted fixed-bottom" id="footer">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-6 text-start">
+                &copy; 2024 - Sistema de Ingresos y Salidas Laborales <a href="https://github.com/CristhianDavid0207/Registro-Entrada-y-Salida">Daniel Toro | Cristhian Bermudez</a>
+            </div>
+            <div class="col-6 text-end">
+                <marquee><p><b>Animo....ya casi ingresas a nuestra pagina</b></p></marquee>
+            </div>
+        </div>
+    </div>
+</footer>
