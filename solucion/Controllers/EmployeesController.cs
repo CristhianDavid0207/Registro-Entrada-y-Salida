@@ -20,6 +20,8 @@ namespace solucion.Controllers
 
             ViewBag.Nombre = HttpContext.Session.GetString("Names");
             ViewBag.LastNames = HttpContext.Session.GetString("LastNames");
+            ViewBag.PhotoProfile = HttpContext.Session.GetString("PhotoProfile");
+            ViewBag.Email = HttpContext.Session.GetString("Email");
 
             if(ViewBag.Nombre != null){
                 return View(_context.Controls.ToList());

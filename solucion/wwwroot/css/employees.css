@@ -133,4 +133,8 @@
   .button2:hover:after {
     transform: translateX(1em);
   }
+
+  .card{
+    overflow: hidden;
+  }
   
