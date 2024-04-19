@@ -25,6 +25,7 @@
                     </li>
                     <div class="dropdown-menu" id="menu">
                         <a class="dropdown-item" href="#">History</a>
+                        <a class="dropdown-item" asp-controller="Employees" asp-action="Create">Add employee</a>
                         <form asp-controller="Employees" asp-action="Logout" method="post">
                             <button class="dropdown-item" type="submit">Sign Out</button>
                         </form>
@@ -35,12 +36,64 @@
     </nav>
 </header>
 
-<div class="mb-3">
-    <a type="button" class="btn btn-outline-primary mt-5" asp-controller="Employees" asp-action="Index">Inicio</a>
+<div class="container">
+    <div class="row justify-content-center align-items-center " style="height: 100vh;">
+        <div class="card col-md-5 shadow">
+            <div class="text-center">
+                <img class="m-3" src="~/img/cyd.png" style="width: 200px;">
+            </div>
+            <form asp-action="Create" method="post">
+                <div class="mb-3">
+                    <label for="Photo" class="form-label"><b>PhotoProfile:</b></label>
+                    <input type="file" id="foto" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label asp-for="Names"><b>Names:</b></label>
+                    <input asp-for="Names" class="form-control" />
+                    <span asp-validation-for="Names" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="LastNames"><b>LastNames:</b></label>
+                    <input asp-for="LastNames" class="form-control" />
+                    <span asp-validation-for="LastNames" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Email"><b>Email:</b></label>
+                    <input asp-for="Email" class="form-control" />
+                    <span asp-validation-for="Email" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Password"><b>Password:</b></label>
+                    <input asp-for="Password" class="form-control" />
+                    <span asp-validation-for="Password" class="text-danger"></span>
+                </div>
+                <div class="text-center" >
+                    <button class="btn btn-outline-dark shadow mt-4 m-3 w-50" >CREAR</button>
+                </div>
+            </form>
+        </div>
+    </div> 
 </div>
-<h2 class="text-center">CREAR EMPLEADO</h2> 
-<div class="container col-6">
+
+<div class="container col-4">
+    <div class="text-center">
+        <img class="m-3" src="~/img/cyd.png" style="width: 200px;">
+    </div>
     <form asp-action="Create" method="post">
+        <div class="mb-3">
+            <label for="Photo" class="form-label"><b>PhotoProfile:</b></label>
+            <input type="file" id="foto" class="form-control">
+        </div>
+        <div class="form-group">
+            <label asp-for="Names"><b>Names:</b></label>
+            <input asp-for="Names" class="form-control" />
+            <span asp-validation-for="Names" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="LastNames"><b>LastNames:</b></label>
+            <input asp-for="LastNames" class="form-control" />
+            <span asp-validation-for="LastNames" class="text-danger"></span>
+        </div>
         <div class="form-group">
             <label asp-for="Email"><b>Email:</b></label>
             <input asp-for="Email" class="form-control" />
@@ -51,7 +104,9 @@
             <input asp-for="Password" class="form-control" />
             <span asp-validation-for="Password" class="text-danger"></span>
         </div>
-        <button type="submit" class="btn btn-outline-primary mt-3">CREAR</button>
+        <div>
+            <button type="submit" class="btn btn-outline-black mt-3 text-center">CREAR</button>
+        </div>
     </form> 
 </div>
 

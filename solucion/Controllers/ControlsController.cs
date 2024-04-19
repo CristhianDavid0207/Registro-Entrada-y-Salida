@@ -23,6 +23,7 @@ namespace solucion.Controllers
         public async Task<IActionResult> Income()
         {
             var id = HttpContext.Session.GetInt32("Id");
+            return Json(id);
             var lista = new Control(){
                 Income = DateTime.Now,
                 EmployeesId = id
