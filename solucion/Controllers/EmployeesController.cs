@@ -15,8 +15,7 @@ namespace solucion.Controllers
         }
 
         public IActionResult Index()
-        {
-            
+        {           
 
             ViewBag.Nombre = HttpContext.Session.GetString("Names");
             ViewBag.LastNames = HttpContext.Session.GetString("LastNames");
@@ -36,6 +35,11 @@ namespace solucion.Controllers
         {
             HttpContext.Session.Clear();
             return RedirectToAction("Index", "Home");
+        }
+
+        public IActionResult Create()
+        {
+            return View();
         }
 
 

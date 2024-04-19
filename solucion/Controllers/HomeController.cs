@@ -38,6 +38,7 @@ public class HomeController : Controller
             if(user != null && user.Password == password ) //Si el usuario es diferente de null
             {
                 HttpContext.Session.SetString("Names", user.Names);
+                HttpContext.Session.SetInt32("Id", user.Id);
                 HttpContext.Session.SetString("LastNames", user.LastNames);
                 HttpContext.Session.SetString("PhotoProfile", user.PhotoProfile);
                 HttpContext.Session.SetString("Email", user.Email);
