@@ -39,6 +39,8 @@ public class HomeController : Controller
             {
                 HttpContext.Session.SetString("Names", user.Names);
                 HttpContext.Session.SetString("LastNames", user.LastNames);
+                HttpContext.Session.SetString("PhotoProfile", user.PhotoProfile);
+                HttpContext.Session.SetString("Email", user.Email);
                 //Encontramos un usuario con los datos
                 return RedirectToAction("Index", "Employees");
             }

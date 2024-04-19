@@ -14,10 +14,10 @@
             <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between col-">
                 <ul class="navbar-nav flex-grow-1 dropdown d-flex justify-content-end align-items-center">
                     <li class="nav-item">
-                        <p style="font-size: 12px;" class="align-items-cente"><b>Welcome @ViewBag.Nombre</b></p>
+                        <p style="font-size: 12px;" class="align-items-cente"><b>Welcome @ViewBag.Nombre @ViewBag.LastNames</b></p>
                     </li>
                     <li class="nav-item">
-                        <img src="https://img.freepik.com/vector-premium/perfil-masculino-peinado-barba-bigote-logotipo-barberia-silueta-hombre-vector_849264-549.jpg"  style="width:50px; border-radius:50px " class="ms-2 nav-link">
+                        <img src="@ViewBag.PhotoProfile" style="width:50px; border-radius:50px " class="ms-2 nav-link">
                     </li>
                     <div class="dropdown-menu" id="menu">
                         <a class="dropdown-item" href="#">Historial</a>
@@ -32,12 +32,19 @@
     </nav>
 </header>
 
-<div class="container">
-    <div class="row d-flex justify-content-center align-items-center">        
-        <img src="https://img.freepik.com/vector-premium/perfil-masculino-peinado-barba-bigote-logotipo-barberia-silueta-hombre-vector_849264-549.jpg"  style="width:130px; border-radius:50px " class="mb-5">
-        <p style="font-size: 20px;" class="text-center mb-5"><b>@ViewBag.Nombre</b></p>         
-        <a class="button1 m-2">Registrar Entrada</a><br>
-        <a class="button2 m-2">Registrar Salida</a>
+<div class="container " style="height: 80vh; background-color: rgb(190, 190, 190);">
+    <div class="row d-flex justify-content-center align-items-center">  
+        <div class="card border-0 align-items-center col-6" style="background-color: rgb(190, 190, 190);">
+            <img src="@ViewBag.PhotoProfile" style="width: 100px;" class="m-3 text-center ">
+            <h2 class="text-center mb-0">@ViewBag.Nombre @ViewBag.LastNames</h2> 
+            <p>@ViewBag.Email</p>
+            
+            <div class=" d-column justify-content-center text-center">
+                <a class="button1 m-3 text-center">Registrar Entrada</a>
+                <a class="button2 m-3">Registrar Salida</a>
+            </div>
+
+        </div>      
     </div>
 </div>
 
