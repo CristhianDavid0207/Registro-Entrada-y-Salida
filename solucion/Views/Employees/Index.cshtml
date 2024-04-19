@@ -20,8 +20,8 @@
                         <img src="@ViewBag.PhotoProfile" style="width:50px; border-radius:50px " class="ms-2 nav-link">
                     </li>
                     <div class="dropdown-menu" id="menu">
-                        <a class="dropdown-item" href="#">Historial</a>
-                        <a class="dropdown-item" asp-controller="Employees" asp-action="Create">Agregar nuevo empleado</a>
+                        <a class="dropdown-item" href="#">History</a>
+                        <a class="dropdown-item" asp-controller="Employees" asp-action="Create">Add employee</a>
                         <form asp-controller="Employees" asp-action="Logout" method="post">
                             <button class="dropdown-item" type="submit">Sign Out</button>
                         </form>
@@ -39,8 +39,8 @@
             <h2 class="text-center mb-0">@ViewBag.Nombre @ViewBag.LastNames</h2> 
             <p>@ViewBag.Email</p>
             <div class=" d-column justify-content-center text-center">
-                <a class="button1 m-3">Registrar Entrada</a>
-                <a class="button2 m-3">Registrar Salida</a>
+                <a class="button1 m-3">Register Entry</a>
+                <a class="button2 m-3">Register Departure</a>
             </div>
         </div>      
     </div>
@@ -51,10 +51,10 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-6 text-start">
-                &copy; 2024 - Sistema de Ingresos y Salidas Laborales <a href="https://github.com/CristhianDavid0207/Registro-Entrada-y-Salida">Daniel Toro | Cristhian Bermudez</a>
+                &copy; 2024 - Work Entry and Exit System <a href="https://github.com/CristhianDavid0207/Registro-Entrada-y-Salida">Daniel Toro | Cristhian Bermudez</a>
             </div>
             <div class="col-6 text-end">
-                <marquee><p><b>Bienvenidos a nuestra espectacular pagina</b></p></marquee>
+                <marquee><p><b>Welcome to our spectacular page</b></p></marquee>
             </div>
         </div>
     </div>
